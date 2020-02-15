@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Flower.master.cs" Inherits="FlowerShop.Flower" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Flower Shop</title>
+    <link rel="stylesheet" type="text/css" href="lgstyle.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div>
+        <h1 class="Fontcolor">FLOWER SHOP ONLINE</h1>
+     <h2 class="break">&nbsp</h2>
+    </div>
+    <form id="form1" runat="server">
+        <%--<div align="right">
+            <%--<asp:HyperLink ID="Flowerpagelink" runat="server" Text="Paymentpage" NavigateUrl="~/FlowerOrderPayment.aspx"></asp:HyperLink>--%>
+      <%--  </div>--%>
+       
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <footer id="footer">hi</footer>
+</body>
+</html>
