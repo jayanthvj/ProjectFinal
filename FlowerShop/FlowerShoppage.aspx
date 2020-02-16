@@ -108,7 +108,14 @@
                      <p><asp:TextBox CssClass="TextBox" ID="City" runat="server" required=""  onchange="Townvalidation()"></asp:TextBox></p>
                      <p><asp:TextBox CssClass="TextBox" ID="Region" runat="server" onchange="RegionValidation()"></asp:TextBox></p>
                      <p><asp:TextBox CssClass="TextBox2" ID="pincode" runat="server" required="" onchange="Postalcodevalidation()" ></asp:TextBox></p>
-                    <p><asp:DropDownList CssClass="DropDownList" ID="Country" runat="server" required="" onchange="Countryvalidation()"><asp:ListItem Value="United Kingdom">United Kingdom</asp:ListItem><asp:ListItem Value="India">India</asp:ListItem><asp:ListItem Value="United States">United States</asp:ListItem><asp:ListItem Value="China">China</asp:ListItem><asp:ListItem Value="France">France</asp:ListItem><asp:ListItem Value="Germany">Germany</asp:ListItem><asp:ListItem Value="Russia">Russia</asp:ListItem></asp:DropDownList></p>
+                    <p><asp:DropDownList CssClass="DropDownList" ID="Country" runat="server" required="" onchange="Countryvalidation()">
+                        <asp:ListItem Value="United Kingdom">United Kingdom</asp:ListItem>
+                        <asp:ListItem Value="India">India</asp:ListItem>
+                        <asp:ListItem Value="United States">United States</asp:ListItem>
+                        <asp:ListItem Value="China">China</asp:ListItem>
+                        <asp:ListItem Value="France">France</asp:ListItem>
+                        <asp:ListItem Value="Germany">Germany</asp:ListItem>
+                        <asp:ListItem Value="Russia">Russia</asp:ListItem></asp:DropDownList></p>
                     <p><asp:TextBox CssClass="TextBox2" ID="Telephone" runat="server" onchange="telephonevalidation()"></asp:TextBox></p>
                      <p><asp:TextBox CssClass="TextBox2" ID="Fax" runat="server" onchange="faxnumbervalidation()"></asp:TextBox></p>
                      <p><asp:TextBox CssClass="TextBox" ID="email" runat="server" required="" onchange="emailvalidation()"></asp:TextBox></p>

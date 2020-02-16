@@ -104,12 +104,10 @@
     <Content Include="FlowerShoppage.aspx" />
     <Content Include="images\img.png" />
     <Content Include="JavaScriptFlowerShop.js" />
-    <Content Include="lgstyle.css" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Flower.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -118,7 +116,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FlowerOrderPayment.aspx" />
     <Content Include="FlowerPageStyle.css" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
@@ -126,20 +123,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Flower.Master.cs">
-      <DependentUpon>Flower.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Flower.Master.designer.cs">
-      <DependentUpon>Flower.Master</DependentUpon>
-    </Compile>
-    <Compile Include="FlowerOrderPayment.aspx.cs">
-      <DependentUpon>FlowerOrderPayment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FlowerOrderPayment.aspx.designer.cs">
-      <DependentUpon>FlowerOrderPayment.aspx</DependentUpon>
-    </Compile>
     <Compile Include="FlowerShoppage.aspx.cs">
       <DependentUpon>FlowerShoppage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -5,7 +5,7 @@
     var data=regex.test(num);
     if (!data) {
         alert("Card number is invalid!");
-        num.focus();
+       
         }
 }
 function validateSecurityCode() {
@@ -14,21 +14,21 @@ function validateSecurityCode() {
     var securitynum = regex.test(ccv);
     if(!securitynum)
     {
-        x.focus();
+        
         alert("enter the correct CCV");
     }
 }
 function ExpirydatemonthValidation() {
     var month = document.getElementById("months").value;
     if (month === null ) {
-        x.focus();
+        
         alert("Expiry Month is invalid!");
     }
 }
 function ExpirydateyearValidation() {
     var year = document.getElementById("year").value;
     if ( year === null) {
-        x.focus();
+       
         alert("Expiry Month is invalid!");
     }
 }
@@ -39,7 +39,7 @@ function CardholderNameValidation()
     var cardholdername = regex.test(name);
     if(!cardholdername)
     {
-        x.focus();
+       
         alter("enter the correct format name");
     }
 }
@@ -48,7 +48,7 @@ function Addressvalidation()
     var address = document.getElementById("Address1").value;
     if(address===null)
     {
-        x.focus();
+        
         alert("fill the address");
     }
 }
@@ -56,7 +56,7 @@ function Townvalidation() {
     var town = document.getElementById("City").value;
     var regex = /^[A-Za-z]+$/;
     if (!card===regex.test(town)) {
-        x.focus();
+       
         alert("enter the Town/City");
     }
 }
@@ -65,7 +65,7 @@ function RegionValidation() {
     var regex = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/;
     if (!regiondata===regex.test(region))
     {
-        x.focus();
+      
         alert("Region is invalid!");
     } 
     
@@ -75,7 +75,7 @@ function Postalcodevalidation() {
     var regex = /^(?:6[0-9]{6})$/;
     var code = regex.test(postalcode);
     if (!code) {
-        x.focus();
+      
         alert("enter the Town/City");
     }
 }
@@ -88,7 +88,6 @@ function telephonevalidation() {
     var regex = /^\+?([6-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
     if(!telenum===regex.test(telephone))
     {
-        x.focus();
         alert("please insert valid number");
     }
 }
