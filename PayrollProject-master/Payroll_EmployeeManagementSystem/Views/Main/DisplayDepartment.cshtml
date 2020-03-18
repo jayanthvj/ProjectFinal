@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Payroll_Entity.Department>
+
+@{
+    ViewBag.Title = "DisplayDepartment";
+    Layout = "~/Views/Shared/_DepartmentDesignationLayoutPage.cshtml";
+}
+
+<h2>DisplayDepartment</h2>
+<table cellpadding="10" align="center">
+    <tr>
+        <td>Department Name</td>
+    </tr>
+    </table>
+<table cellpadding="5" border="1" align="center">
+    @foreach (Payroll_Entity.Department department in Model)
+    {
+        <tr>
+            <td>@department.DepartmentName</td>
+            <td>@Html.ActionLink("Add", "AddDepartment", new { name =department.DepartmentName })</td>
+            <td>@Html.ActionLink("Delete", "DeleteDepartment", new { id =department.DepartmentId},new {Onclick="return confirm('The Department Data will be Deleted. Are you sure want to delete?')"})</td>
+        </tr>
+    }
+</table>
+

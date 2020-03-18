@@ -1,0 +1,58 @@
+﻿@model Payroll_EmployeeManagementSystem.Models.EmployeeModel
+
+@{
+    ViewBag.Title = "Display";
+    Layout = "~/Views/Shared/_DepartmentDesignationLayoutPage.cshtml";
+}
+
+<h2>Display</h2>
+<table border="1"class="tableColour" >
+    <tr>
+        <td>Employee Name</td>
+        <td>Employee Age</td>
+        <td>Employee Gender</td>
+        <td>Employee PhoneNumber</td>
+        <td>EmployeeEmail</td>
+        <td>DepartmentId</td>
+        <td>Designation Id</td>
+        <td>Choice</td>
+    </tr>
+    @foreach (var employee in (List<Payroll_Entity.Employee>)TempData["Employees"])
+    {
+        <tr>
+            <td>
+                @employee.EmployeeName
+            </td>
+            <td>
+                @employee.EmployeeAge
+            </td>
+            <td>
+                @employee.Gender
+            </td>
+            <td>
+                @employee.PhoneNumber
+            </td>
+            <td>
+                @employee.EmailId
+            </td>
+            <td>
+                @employee.Department.DepartmentName
+            </td>
+            <td>
+                @employee.Designation.Designation
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = employee.EmployeeId })
+                @Html.ActionLink("Delete", "Delete", new { id = employee.EmployeeId }, new { Onclick = "return confirm('The Employee Data will be Deleted. Are you sure want to delete?')" })</td>
+        </tr>
+    }
+</table>
+<table>
+    <tr>
+        <td>
+            @Html.ActionLink("Add New Employee", "AddEmployee")
+        </td>
+    </tr>
+</table>
+

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Payroll_Entity.Salary>
+
+@{
+    ViewBag.Title = "DisplaySalaryData";
+    Layout = "~/Views/Shared/_DepartmentDesignationLayoutPage.cshtml";
+}
+
+<h2>DisplaySalaryData</h2>
+<table cellpadding="10" border="1">
+    <tr>
+        <td>Basic Salary</td>
+        <td>HRA</td>
+        <td>MA</td>
+        <td>PF</td>
+        <td>Choice</td>
+    </tr>
+    @foreach (Payroll_Entity.Salary salary in Model)
+    {
+        <tr>
+            <td>@salary.BasicSalary</td>
+            <td>@salary.HouseRentAllowance</td>
+            <td>@salary.MedicalAllowance</td>
+            <td>@salary.ProvidentFund</td>
+            <td>@Html.ActionLink("Add", "AddSalaryData", new { name =salary.Grade})
+                @Html.ActionLink("Delete", "DeleteDepartment", new { id = salary.Grade }, new { Onclick = "return confirm('The Salary Data will be Deleted. Are you sure want to delete?')" })</td>
+        </tr>
+    }
+</table>
+

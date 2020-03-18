@@ -1,0 +1,31 @@
+﻿@model Payroll_EmployeeManagementSystem.Models.DepartmentModel
+
+@{
+    ViewBag.Title = "AddDepartment";
+    Layout = "~/Views/Shared/Master_LayoutPage.cshtml";
+}
+
+<h2>AddDepartment</h2>
+@using (Html.BeginForm("AddDepartment", "Main", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <tr>
+            <td>
+                @Html.Label("DepartmentName")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.DepartmentName)
+                @Html.ValidationMessageFor(Model => Model.DepartmentName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" />
+            </td>
+            <td>
+                @Html.ActionLink("Dispaly","DisplayDepartment")
+            </td>
+        </tr>
+    </table>
+}

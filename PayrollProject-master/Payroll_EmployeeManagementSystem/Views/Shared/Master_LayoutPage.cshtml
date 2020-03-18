@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/Models/Content/Site.css"/>
+</head>
+<body class="background">
+    <div >
+        @Html.ActionLink("Home", "Index", "Home")
+        @if (HttpContext.Current.User.Identity.IsAuthenticated)
+        {          
+        @Html.ActionLink("Logout", "LogOff", "Login")
+        }
+        else
+        {
+        @Html.ActionLink("Login","Login","Login")
+        }
+        @if (HttpContext.Current.User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("AddDepartment", "AddDepartment", "Main")
+            @Html.ActionLink("AddDesignation", "AddDesignation", "Main")
+            @Html.ActionLink("AddEmployee", "AddEmployee", "Main")
+        }
+        @if (HttpContext.Current.User.IsInRole("Account Manager"))
+        {
+            @Html.ActionLink("AddSalary","SalaryData","Main")
+        }
+        @if (HttpContext.Current.User.IsInRole("User"))
+        {
+            @Html.ActionLink("Display","Display","Main")
+        }
+        @RenderBody()
+    </div>
+</body>
+</html>

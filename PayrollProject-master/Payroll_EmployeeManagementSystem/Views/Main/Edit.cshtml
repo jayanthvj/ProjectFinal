@@ -1,0 +1,58 @@
+﻿@model Payroll_EmployeeManagementSystem.Models.EmployeeModel
+
+@{
+    ViewBag.Title = "EditEmployeeData";
+    Layout = "~/Views/Shared/Master_LayoutPage.cshtml";
+}
+
+<h2>EditEmployeeData</h2>
+@using (Html.BeginForm("Update", "Main", FormMethod.Post))
+{
+    @Html.HiddenFor(Model=>Model.EmployeeId)
+    <table cellpadding="10">
+        <tr>
+            <td>@Html.LabelFor(Model => Model.EmployeeName)</td>
+            <td>@Html.EditorFor(Model => Model.EmployeeName)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.Gender)</td>
+            <td>@Html.EditorFor(Model => Model.Gender)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.EmployeeAge)</td>
+            <td>@Html.EditorFor(Model => Model.EmployeeAge)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.PhoneNumber)</td>
+            <td>@Html.EditorFor(Model => Model.PhoneNumber)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.EmailId)</td>
+            <td>@Html.EditorFor(Model => Model.EmailId)</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.Department)
+            </td>
+            <td>
+                @Html.DropDownListFor(model => model.DepartmentId, (IEnumerable<SelectListItem>)ViewBag.Departments, "Choose department")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.Designation)
+            </td>
+            <td>
+                @Html.DropDownListFor(model => model.DesignationId, (IEnumerable<SelectListItem>)ViewBag.Designations, "Choose designation")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Cancel", "Display")
+            </td>
+            <td>
+                <input type="submit" id="submit" />
+            </td>
+        </tr>
+    </table>
+}

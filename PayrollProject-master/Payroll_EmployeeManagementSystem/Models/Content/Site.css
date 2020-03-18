@@ -1,0 +1,18 @@
+﻿
+.background{
+    background-image:url(../../Images/Payroll-Processing-1024x489.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.tableColour{
+    border-color:gainsboro;
+
+}
+.ValidateMessageColor{
+    color:red;
+}
+.Link{
+    color:blue;
+    border:10px;
+    box-shadow:10px;
+}

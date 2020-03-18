@@ -1,0 +1,30 @@
+﻿@model Payroll_EmployeeManagementSystem.Models.DesignationModel
+
+@{
+    ViewBag.Title = "AddDesignation";
+    Layout = "~/Views/Shared/_DepartmentDesignationLayoutPage.cshtml";
+}
+
+<h2>AddDesignation</h2>
+@using (Html.BeginForm("AddDesignation", "Main", FormMethod.Post))
+{
+    <table cellpadding="10">
+        <tr>
+            <td>
+                @Html.Label("DesignationName")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Designation)
+                @Html.ValidationMessageFor(Model => Model.Designation)
+            </td>
+           
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Add" />
+                @Html.ActionLink("Display","DisplayDesignation")
+            </td>
+        </tr>
+    </table>
+}
+

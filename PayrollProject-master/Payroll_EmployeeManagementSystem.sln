@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll_EmployeeManagementSystem", "Payroll_EmployeeManagementSystem\Payroll_EmployeeManagementSystem.csproj", "{16772B50-15C9-47E7-861C-79541AA09FC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll_Entity", "Payroll_Entity\Payroll_Entity.csproj", "{21682BF4-0638-4D30-9F38-156FEC9C3887}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll_DAL", "Payroll_DAL\Payroll_DAL.csproj", "{E3108D63-2BC0-4D3B-BC37-206052F6643D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll_BL", "Payroll_BL\Payroll_BL.csproj", "{4E49A704-A6FA-4766-9CC2-84429E443702}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16772B50-15C9-47E7-861C-79541AA09FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16772B50-15C9-47E7-861C-79541AA09FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16772B50-15C9-47E7-861C-79541AA09FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16772B50-15C9-47E7-861C-79541AA09FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21682BF4-0638-4D30-9F38-156FEC9C3887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21682BF4-0638-4D30-9F38-156FEC9C3887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21682BF4-0638-4D30-9F38-156FEC9C3887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21682BF4-0638-4D30-9F38-156FEC9C3887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3108D63-2BC0-4D3B-BC37-206052F6643D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3108D63-2BC0-4D3B-BC37-206052F6643D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3108D63-2BC0-4D3B-BC37-206052F6643D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3108D63-2BC0-4D3B-BC37-206052F6643D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E49A704-A6FA-4766-9CC2-84429E443702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E49A704-A6FA-4766-9CC2-84429E443702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E49A704-A6FA-4766-9CC2-84429E443702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E49A704-A6FA-4766-9CC2-84429E443702}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

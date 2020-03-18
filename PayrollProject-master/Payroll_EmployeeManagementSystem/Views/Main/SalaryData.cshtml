@@ -1,0 +1,50 @@
+﻿@model Payroll_EmployeeManagementSystem.Models.SalaryDataModel
+
+@{
+    ViewBag.Title = "SalaryData";
+    Layout = "~/Views/Shared/_DepartmentDesignationLayoutPage.cshtml";
+}
+
+<h2>SalaryData</h2>
+@using (Html.BeginForm("SalaryData", "Main", FormMethod.Post))
+{
+    <table cellpadding="10">
+        <tr>
+            <td>
+                @Html.Label("Basic Salary")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.BasicSalary,new { maxlength = 10 })
+                @Html.ValidationMessageFor(Model => Model.BasicSalary,"",new { @class = "ValidateMessageColor" })
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("HouseRentAllowance")</td>
+            <td>
+                @Html.TextBoxFor(Model => Model.HouseRentAllowance, new { maxlength = 10 })
+                @Html.ValidationMessageFor(Model => Model.HouseRentAllowance, "", new { @class = "ValidateMessageColor" })
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("MedicalAllowance")</td>
+            <td>
+                @Html.TextBoxFor(Model => Model.MedicalAllowance, new { maxlength = 10 })
+                @Html.ValidationMessageFor(Model => Model.MedicalAllowance, "", new { @class = "ValidateMessageColor" })
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Provident Fund")</td>
+            <td>
+                @Html.TextBoxFor(Model => Model.ProvidentFund, new { maxlength = 10 })
+                @Html.ValidationMessageFor(Model => Model.ProvidentFund, "", new { @class = "ValidateMessageColor" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Add" />
+                @Html.ActionLink("Display", "DisplaySalaryData")
+            </td>
+        </tr>
+    </table>
+}
+

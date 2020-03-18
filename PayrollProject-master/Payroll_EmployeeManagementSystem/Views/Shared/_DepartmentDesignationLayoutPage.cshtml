@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/Models/Content/Site.css" />
+</head>
+<body class="background">
+    <div>
+        @Html.ActionLink("AddDepartment","AddDepartment")
+        @Html.ActionLink("AddDesignation", "AddDesignation")
+        @Html.ActionLink("AddEmployee","AddEmployee")
+        @Html.ActionLink("AddSalary", "SalaryData")
+        @Html.ActionLink("LogOut","Index","Home")
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@model Payroll_EmployeeManagementSystem.Models.AccountModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/Master_LayoutPage.cshtml";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <table cellpadding="10">
+        <tr>
+            <td>@Html.LabelFor(Model => Model.EmailId,new { @id = "EmailId" })</td>
+            <td>
+            @Html.TextBoxFor(Model => Model.EmailId, new { maxlength = 250 })
+            @Html.ValidationMessageFor(Model=>Model.EmailId,"", new { @class = "ValidateMessageColor" })
+            </td>
+
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.Password)</td>
+            <td>
+            @Html.PasswordFor(Model => Model.Password, new { maxlength = 30 })
+            @Html.ValidationMessageFor(Model => Model.Password, "", new { @class = "ValidateMessageColor" })
+            </td>
+            <td class="ValidateMessageColor">
+               @if(ViewBag.message!=null)
+               {
+                   @ViewBag.message
+               }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Login" id="Login" />
+            </td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,83 @@
+﻿@model Payroll_EmployeeManagementSystem.Models.EmployeeModel
+
+@{
+    ViewBag.Title = "AddEmployee";
+    Layout = "~/Views/Shared/_DepartmentDesignationLayoutPage.cshtml";
+}
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/scripts/jquery.validate.min.js"></script>
+<script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Models/Content/Site.css" />
+<h2 align="center">AddEmployee</h2>
+@using (Html.BeginForm("AddEmployee", "Main", FormMethod.Post))
+{
+       <table cellpadding="10" align="center" >
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.EmployeeName)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.EmployeeName, new { maxlength = 25 })
+                @Html.ValidationMessageFor(Model => Model.EmployeeName,"",new { @class= "ValidateMessageColor" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Designation)
+            </td>
+            <td>
+                @Html.DropDownListFor(Model=> Model.DesignationId,(IEnumerable<SelectListItem>)ViewBag.Designations, "Select Designation")
+                @Html.ValidationMessageFor(Model => Model.DesignationId, "", new { @class = "ValidateMessageColor" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.EmailId)
+            </td>
+            <td>
+               @Html.TextBoxFor(Model => Model.EmailId,new { maxlength = 250 })
+                @Html.ValidationMessageFor(Model => Model.EmailId, "", new { @class = "ValidateMessageColor" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.EmployeeAge)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.EmployeeAge,new {maxlength=2 })
+                @Html.ValidationMessageFor(Model => Model.EmployeeAge, "", new { @class = "ValidateMessageColor" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Gender)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Gender,new { maxlemgth=6})
+                @Html.ValidationMessageFor(Model => Model.Gender, "", new { @class = "ValidateMessageColor" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.PhoneNumber)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.PhoneNumber,new { Maxlength = 16 })
+                @Html.ValidationMessageFor(Model => Model.PhoneNumber, "", new { @class = "ValidateMessageColor" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Department)
+            </td>
+            <td>
+                @Html.DropDownListFor(Model => Model.DepartmentId,(IEnumerable<SelectListItem>)ViewBag.Departments,"select Departments")
+                @Html.ValidationMessageFor(Model=>Model.DepartmentId,"",new { @class = "ValidateMessageColor" })
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" id="AddEmployeeId" /></td>
+            <td>@Html.ActionLink("Display", "Display" , "",new { @class = "Link" })</td>   
+        </tr>
+    </table>
+}

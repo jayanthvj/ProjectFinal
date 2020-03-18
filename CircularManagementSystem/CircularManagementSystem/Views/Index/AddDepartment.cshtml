@@ -1,0 +1,27 @@
+﻿@model CircularManagementSystem.Models.DepartmentModel
+
+@{
+    ViewBag.Title = "AddDepartment";
+}
+
+<h2>AddDepartment</h2>
+
+@using(Html.BeginForm("AddDepartment","Index",FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.Label("DepartmentName")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.DepartmentName)
+                @Html.ValidationMessageFor(Model => Model.DepartmentName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" />
+            </td>
+        </tr>
+    </table>
+}

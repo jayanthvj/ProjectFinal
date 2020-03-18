@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Payroll_Entity.EmployeeDesigination>
+
+@{
+    ViewBag.Title = "DisplayDesignation";
+    Layout = "~/Views/Shared/_DepartmentDesignationLayoutPage.cshtml";
+}
+
+<h2>DisplayDesignation</h2>
+<table cellpadding="10" align="center">
+    <tr>
+        <td><b>Designation Name</b></td>
+    </tr>
+</table>
+<table cellpadding="10" border="1"  align="center">
+    @foreach(Payroll_Entity.EmployeeDesigination designation in Model)
+    {
+        <tr>
+            <td>@designation.Designation</td>
+            <td>@Html.ActionLink("Add","AddDesignation",new { name = designation.Designation })</td>
+            <td>@Html.ActionLink("Delete","DeleteDesignation", new { id = designation.DesignationId }, new { Onclick = "return confirm('The Designation Data will be Deleted. Are you sure want to delete?')" })</td>
+        </tr>
+    }
+</table>
