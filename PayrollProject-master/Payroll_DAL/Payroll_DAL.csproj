@@ -68,37 +68,9 @@
     <Compile Include="DepartmentRepository.cs" />
     <Compile Include="DesignationRepository.cs" />
     <Compile Include="EmployeeRepository.cs" />
-    <Compile Include="Migrations\202003171004059_salaryTable.cs" />
-    <Compile Include="Migrations\202003171004059_salaryTable.designer.cs">
-      <DependentUpon>202003171004059_salaryTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003171008376_id.cs" />
-    <Compile Include="Migrations\202003171008376_id.designer.cs">
-      <DependentUpon>202003171008376_id.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003171047048_data.cs" />
-    <Compile Include="Migrations\202003171047048_data.designer.cs">
-      <DependentUpon>202003171047048_data.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003171351260_validation.cs" />
-    <Compile Include="Migrations\202003171351260_validation.designer.cs">
-      <DependentUpon>202003171351260_validation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003171355518_unique.cs" />
-    <Compile Include="Migrations\202003171355518_unique.designer.cs">
-      <DependentUpon>202003171355518_unique.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003181107342_sample.cs" />
-    <Compile Include="Migrations\202003181107342_sample.designer.cs">
-      <DependentUpon>202003181107342_sample.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003181707586_Account.cs" />
-    <Compile Include="Migrations\202003181707586_Account.designer.cs">
-      <DependentUpon>202003181707586_Account.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003181730040_Accounts.cs" />
-    <Compile Include="Migrations\202003181730040_Accounts.designer.cs">
-      <DependentUpon>202003181730040_Accounts.cs</DependentUpon>
+    <Compile Include="Migrations\202003191258531_data.cs" />
+    <Compile Include="Migrations\202003191258531_data.designer.cs">
+      <DependentUpon>202003191258531_data.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,29 +87,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003171004059_salaryTable.resx">
-      <DependentUpon>202003171004059_salaryTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003171008376_id.resx">
-      <DependentUpon>202003171008376_id.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003171047048_data.resx">
-      <DependentUpon>202003171047048_data.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003171351260_validation.resx">
-      <DependentUpon>202003171351260_validation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003171355518_unique.resx">
-      <DependentUpon>202003171355518_unique.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003181107342_sample.resx">
-      <DependentUpon>202003181107342_sample.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003181707586_Account.resx">
-      <DependentUpon>202003181707586_Account.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003181730040_Accounts.resx">
-      <DependentUpon>202003181730040_Accounts.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003191258531_data.resx">
+      <DependentUpon>202003191258531_data.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

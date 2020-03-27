@@ -160,6 +160,7 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ErrorController\ErrorController.cs" />
     <Compile Include="Controllers\HomeController\HomeController.cs" />
@@ -183,11 +184,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Main\Edit.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Shared\_DepartmentDesignationLayoutPage.cshtml" />
     <Content Include="Views\Main\AddDesignation.cshtml" />
     <Content Include="Views\Main\Display.cshtml" />
     <Content Include="Views\Main\DisplayDesignation.cshtml" />

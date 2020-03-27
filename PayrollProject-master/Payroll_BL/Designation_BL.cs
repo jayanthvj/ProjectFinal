@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Payroll_BL
 {
-   public class Designation_BL
+    //public interface IDesignation_Bl
+    //{
+    //    void AddDesignation(EmployeeDesigination designation);
+    //    IEnumerable<EmployeeDesigination> GetDesignation();
+    //    void DeleteDesignation(int DesignationId);
+    //}
+   public class Designation_BL//:IDesignation_Bl
     {
         DesignationRepository repository = new DesignationRepository();
         public void AddDesignation(EmployeeDesigination designation)

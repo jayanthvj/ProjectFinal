@@ -2,9 +2,10 @@
 
 @{
     ViewBag.Title = "AddDepartment";
-    Layout = "~/Views/Shared/Master_LayoutPage.cshtml";
 }
-
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/scripts/jquery.validate.min.js"></script>
+<script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
 <h2>AddDepartment</h2>
 @using (Html.BeginForm("AddDepartment", "Main", FormMethod.Post))
 {
@@ -16,12 +17,12 @@
             </td>
             <td>
                 @Html.TextBoxFor(Model => Model.DepartmentName)
-                @Html.ValidationMessageFor(Model => Model.DepartmentName)
+                @Html.ValidationMessageFor(Model => Model.DepartmentName,"",new { @class = "ValidateMessageColor" })
             </td>
         </tr>
         <tr>
             <td>
-                <input type="submit" />
+                <input type="submit" value="Add"/>
             </td>
             <td>
                 @Html.ActionLink("Dispaly","DisplayDepartment")

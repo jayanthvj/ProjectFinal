@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "DisplayDesignation";
-    Layout = "~/Views/Shared/_DepartmentDesignationLayoutPage.cshtml";
 }
 
 <h2>DisplayDesignation</h2>
@@ -16,8 +15,10 @@
     {
         <tr>
             <td>@designation.Designation</td>
-            <td>@Html.ActionLink("Add","AddDesignation",new { name = designation.Designation })</td>
             <td>@Html.ActionLink("Delete","DeleteDesignation", new { id = designation.DesignationId }, new { Onclick = "return confirm('The Designation Data will be Deleted. Are you sure want to delete?')" })</td>
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Add", "AddDesignation", new { name = designation.Designation })</td>
         </tr>
     }
 </table>

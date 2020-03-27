@@ -11,8 +11,8 @@ namespace Payroll_EmployeeManagementSystem.Controllers
     [HandleError]
     public class MainController : Controller
     {
+        Designation_BL designation_BL = new Designation_BL();
         Department_BL department_BL = new Department_BL();                           //Object for Department Business layer
-        Designation_BL designation_BL = new Designation_BL();                        //Object for Designation Business layer
         Salary_BL salary_BL = new Salary_BL();                                       //Object for Salary Business layer
         Employee employee = new Employee();                                          //Object for Employee Entity
         Department department = new Department();                                    //Object for Department Entity
@@ -20,11 +20,12 @@ namespace Payroll_EmployeeManagementSystem.Controllers
         EmployeeModel employeeModel = new EmployeeModel();                           //Object for Employee Model
         Account account = new Account();                                             //Object for Account Entity
         Salary salary = new Salary();                                                //Object for Salary Entity
-
+        //IDesignation_Bl designation_BL;
         IEmployeeBL employee_BL;
         public void AdminController()
         {
             employee_BL = new Employee_BL();
+            //designation_BL = new Designation_BL();
             
         }
 
@@ -59,6 +60,7 @@ namespace Payroll_EmployeeManagementSystem.Controllers
         }
 
         //Designation methods
+      
         public ActionResult AddDesignation()
         {
             return View();
@@ -66,18 +68,13 @@ namespace Payroll_EmployeeManagementSystem.Controllers
         [HttpPost]
         public ActionResult AddDesignation(DesignationModel designationModel)
         {
-
-            if (ModelState.IsValid)
-            {
-
                 designation.Designation = designationModel.Designation;
                 designation_BL.AddDesignation(designation);
-            }
-            return View();
+                return View();
         }
         public ActionResult DisplayDesignation()
         {
-            IEnumerable<EmployeeDesigination> designation = employee_BL.GetDesgination();
+            IEnumerable<EmployeeDesigination> designation = designation_BL.GetDesignation();
             return View(designation);
         }
         public ActionResult DeleteDesignation(int id)
@@ -91,7 +88,7 @@ namespace Payroll_EmployeeManagementSystem.Controllers
         public ActionResult AddEmployee()
         {
 
-            ViewBag.Designations = new SelectList(employee_BL.GetDesgination(), "DesignationId", "Designation");
+            ViewBag.Designations = new SelectList(designation_BL.GetDesignation(), "DesignationId", "Designation");
             ViewBag.Departments = new SelectList(department_BL.GetDepartment(), "DepartmentId", "DepartmentName");
             return View();
         }
@@ -112,7 +109,7 @@ namespace Payroll_EmployeeManagementSystem.Controllers
             //account.EmployeeId = employeeModel.EmployeeId;
             account.EmailId = employeeModel.EmailId;
             account.Password = employee_BL.GetPassword(employeeModel.EmployeeName, Convert.ToString(employeeModel.PhoneNumber));
-            account.Role = "admin";
+            account.Role = Role.User.ToString();
             employee_BL.AddAccount(account);
         }
         public ActionResult Display()

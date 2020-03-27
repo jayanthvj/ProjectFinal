@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "DisplayDepartment";
-    Layout = "~/Views/Shared/_DepartmentDesignationLayoutPage.cshtml";
 }
 
 <h2>DisplayDepartment</h2>
@@ -16,9 +15,14 @@
     {
         <tr>
             <td>@department.DepartmentName</td>
-            <td>@Html.ActionLink("Add", "AddDepartment", new { name =department.DepartmentName })</td>
             <td>@Html.ActionLink("Delete", "DeleteDepartment", new { id =department.DepartmentId},new {Onclick="return confirm('The Department Data will be Deleted. Are you sure want to delete?')"})</td>
-        </tr>
+            </tr>
     }
 </table>
+<table cellpadding="5" border="1" align="center">
+    <tr>
+    <td>@Html.ActionLink("Add", "AddDepartment")</td>
+        </tr>
+</table>
+
 

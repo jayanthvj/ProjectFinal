@@ -8,7 +8,6 @@ namespace Payroll_Entity
         [Key]
         public int DesignationId { get; set; }
         [MaxLength(50)]
-        [Index(IsUnique = true)]
         public string Designation{ get; set; }
     }
 }

@@ -19,13 +19,14 @@
         }
         @if (HttpContext.Current.User.IsInRole("Admin"))
         {
-            @Html.ActionLink("AddDepartment", "AddDepartment", "Main")
-            @Html.ActionLink("AddDesignation", "AddDesignation", "Main")
-            @Html.ActionLink("AddEmployee", "AddEmployee", "Main")
+            @Html.ActionLink("ViewDepartment", "DisplayDepartment", "Main")
+            @Html.ActionLink("ViewDesignation", "AddDesignation", "Main")
+            @Html.ActionLink("AddEmployeeData", "AddEmployee", "Main")
         }
         @if (HttpContext.Current.User.IsInRole("Account Manager"))
         {
-            @Html.ActionLink("AddSalary","SalaryData","Main")
+            @Html.ActionLink("ViewSalary","DisplaySalaryData","Main")
+            @Html.ActionLink("EmployeeData", "Display", "Main")
         }
         @if (HttpContext.Current.User.IsInRole("User"))
         {

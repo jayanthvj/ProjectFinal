@@ -12,7 +12,6 @@ namespace Payroll_Entity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity), Key()]
         public int Grade { get; set; }
-
         public double BasicSalary { get; set; }
         public double MedicalAllowance { get; set; }
         public double HouseRentAllowance { get; set; }

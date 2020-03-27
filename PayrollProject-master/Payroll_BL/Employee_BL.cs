@@ -18,6 +18,12 @@ namespace Payroll_BL
         Employee GetEmployeeId(int EmployeeId);
         void UpdateEmployee(Employee employee);
     }
+    public enum EmployeeRole
+    {
+        Admin,
+        AccountManager,
+        User,
+    }
    public class Employee_BL:IEmployeeBL
     {
         EmployeeRepository repository = new EmployeeRepository();

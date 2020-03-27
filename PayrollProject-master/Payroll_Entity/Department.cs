@@ -9,7 +9,6 @@ namespace Payroll_Entity
         [Key]
         public int DepartmentId { get; set; }
         [MaxLength(50)]
-        [Index(IsUnique = true)]
         public string DepartmentName { get; set; }
         public ICollection<Employee> Employees { get; set; }
 

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class salaryTable : DbMigration
+    public partial class data : DbMigration
     {
         public override void Up()
         {
@@ -11,13 +11,14 @@
                 "dbo.Accounts",
                 c => new
                     {
-                        EmailId = c.String(nullable: false, maxLength: 128),
-                        Role = c.String(),
-                        Password = c.String(),
+                        EmailId = c.String(nullable: false, maxLength: 250),
+                        Role = c.String(maxLength: 20),
+                        Password = c.String(maxLength: 50),
                         employee_EmployeeId = c.Int(),
                     })
                 .PrimaryKey(t => t.EmailId)
                 .ForeignKey("dbo.Employees", t => t.employee_EmployeeId)
+                .Index(t => t.EmailId, unique: true)
                 .Index(t => t.employee_EmployeeId);
             
             CreateTable(
@@ -25,18 +26,20 @@
                 c => new
                     {
                         EmployeeId = c.Int(nullable: false, identity: true),
-                        EmployeeName = c.String(),
-                        EmployeeAge = c.Short(nullable: false),
+                        EmployeeName = c.String(maxLength: 50),
+                        EmployeeAge = c.Byte(nullable: false),
                         DesignationId = c.Int(nullable: false),
-                        EmailId = c.String(),
+                        EmailId = c.String(maxLength: 250),
                         PhoneNumber = c.Long(nullable: false),
-                        Gender = c.String(),
+                        Gender = c.String(maxLength: 6),
                         DepartmentId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.EmployeeId)
                 .ForeignKey("dbo.Departments", t => t.DepartmentId, cascadeDelete: true)
                 .ForeignKey("dbo.EmployeeDesiginations", t => t.DesignationId, cascadeDelete: true)
+                .Index(t => t.EmployeeName, unique: true)
                 .Index(t => t.DesignationId)
+                .Index(t => t.EmailId, unique: true)
                 .Index(t => t.DepartmentId);
             
             CreateTable(
@@ -44,7 +47,7 @@
                 c => new
                     {
                         DepartmentId = c.Int(nullable: false, identity: true),
-                        DepartmentName = c.String(),
+                        DepartmentName = c.String(maxLength: 50),
                     })
                 .PrimaryKey(t => t.DepartmentId);
             
@@ -53,7 +56,7 @@
                 c => new
                     {
                         DesignationId = c.Int(nullable: false, identity: true),
-                        Designation = c.String(),
+                        Designation = c.String(maxLength: 50),
                     })
                 .PrimaryKey(t => t.DesignationId);
             
@@ -66,14 +69,17 @@
                         MedicalAllowance = c.Double(nullable: false),
                         HouseRentAllowance = c.Double(nullable: false),
                         ProvidentFund = c.Double(nullable: false),
+                        employee_EmployeeId = c.Int(),
                     })
-                .PrimaryKey(t => t.Grade);
+                .PrimaryKey(t => t.Grade)
+                .ForeignKey("dbo.Employees", t => t.employee_EmployeeId)
+                .Index(t => t.employee_EmployeeId);
             
             CreateStoredProcedure(
                 "dbo.Department_Insert",
                 p => new
                     {
-                        DepartmentName = p.String(),
+                        DepartmentName = p.String(maxLength: 50),
                     },
                 body:
                     @"INSERT [dbo].[Departments]([DepartmentName])
@@ -94,7 +100,7 @@
                 p => new
                     {
                         DepartmentId = p.Int(),
-                        DepartmentName = p.String(),
+                        DepartmentName = p.String(maxLength: 50),
                     },
                 body:
                     @"UPDATE [dbo].[Departments]
@@ -117,7 +123,7 @@
                 "dbo.EmployeeDesigination_Insert",
                 p => new
                     {
-                        Designation = p.String(),
+                        Designation = p.String(maxLength: 50),
                     },
                 body:
                     @"INSERT [dbo].[EmployeeDesiginations]([Designation])
@@ -138,7 +144,7 @@
                 p => new
                     {
                         DesignationId = p.Int(),
-                        Designation = p.String(),
+                        Designation = p.String(maxLength: 50),
                     },
                 body:
                     @"UPDATE [dbo].[EmployeeDesiginations]
@@ -167,12 +173,17 @@
             DropStoredProcedure("dbo.Department_Delete");
             DropStoredProcedure("dbo.Department_Update");
             DropStoredProcedure("dbo.Department_Insert");
+            DropForeignKey("dbo.Salaries", "employee_EmployeeId", "dbo.Employees");
             DropForeignKey("dbo.Accounts", "employee_EmployeeId", "dbo.Employees");
             DropForeignKey("dbo.Employees", "DesignationId", "dbo.EmployeeDesiginations");
             DropForeignKey("dbo.Employees", "DepartmentId", "dbo.Departments");
+            DropIndex("dbo.Salaries", new[] { "employee_EmployeeId" });
             DropIndex("dbo.Employees", new[] { "DepartmentId" });
+            DropIndex("dbo.Employees", new[] { "EmailId" });
             DropIndex("dbo.Employees", new[] { "DesignationId" });
+            DropIndex("dbo.Employees", new[] { "EmployeeName" });
             DropIndex("dbo.Accounts", new[] { "employee_EmployeeId" });
+            DropIndex("dbo.Accounts", new[] { "EmailId" });
             DropTable("dbo.Salaries");
             DropTable("dbo.EmployeeDesiginations");
             DropTable("dbo.Departments");

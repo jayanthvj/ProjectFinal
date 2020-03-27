@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "DisplaySalaryData";
-    Layout = "~/Views/Shared/_DepartmentDesignationLayoutPage.cshtml";
 }
 
 <h2>DisplaySalaryData</h2>
@@ -21,8 +20,11 @@
             <td>@salary.HouseRentAllowance</td>
             <td>@salary.MedicalAllowance</td>
             <td>@salary.ProvidentFund</td>
-            <td>@Html.ActionLink("Add", "AddSalaryData", new { name =salary.Grade})
+            <td>
                 @Html.ActionLink("Delete", "DeleteDepartment", new { id = salary.Grade }, new { Onclick = "return confirm('The Salary Data will be Deleted. Are you sure want to delete?')" })</td>
+        </tr>
+        <tr>
+            <td> @Html.ActionLink("Add", "AddSalaryData", new { name = salary.Grade })</td>
         </tr>
     }
 </table>

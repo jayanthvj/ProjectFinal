@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Payroll_Entity;
 using Payroll_EmployeeManagementSystem.Models;
+using Payroll_EmployeeManagementSystem.App_Start;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web;
@@ -16,7 +17,7 @@ namespace Payroll_EmployeeManagementSystem
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             MapperConfig.Mapperdata();
         }
         public static void Mapper()
