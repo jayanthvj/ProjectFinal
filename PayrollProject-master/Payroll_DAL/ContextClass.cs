@@ -12,10 +12,11 @@ namespace Payroll_DAL
         {
 
         }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)     //creating stored procedure 
         {
             modelBuilder.Entity<Department>().MapToStoredProcedures();
             modelBuilder.Entity<EmployeeDesigination>().MapToStoredProcedures();
+            modelBuilder.Entity<Employee>().MapToStoredProcedures();
         }
         public DbSet<Department> departments { get; set; }
         public DbSet<Employee> Employees { get; set; }

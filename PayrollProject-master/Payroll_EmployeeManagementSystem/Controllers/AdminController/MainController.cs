@@ -7,8 +7,8 @@ using System.Collections.Generic;
 
 namespace Payroll_EmployeeManagementSystem.Controllers
 {
+
     [Authorize(Roles = "Admin,Account Manager")]
-    [HandleError]
     public class MainController : Controller
     {
         Designation_BL designation_BL = new Designation_BL();
@@ -22,11 +22,15 @@ namespace Payroll_EmployeeManagementSystem.Controllers
         Salary salary = new Salary();                                                //Object for Salary Entity
         //IDesignation_Bl designation_BL;
         IEmployeeBL employee_BL;
-        public void AdminController()
+        public MainController()
         {
             employee_BL = new Employee_BL();
             //designation_BL = new Designation_BL();
             
+        }
+        public ActionResult Exception()
+        {
+            throw new Exception("suma error");
         }
 
         //Department methods
@@ -95,7 +99,7 @@ namespace Payroll_EmployeeManagementSystem.Controllers
         [HttpPost]
         public ActionResult AddEmployee(EmployeeModel employeeModel)
         {
-            ViewBag.Designations = new SelectList(employee_BL.GetDesgination(), "DesignationId", "Designation");
+            ViewBag.Designations = new SelectList(designation_BL.GetDesignation(), "DesignationId", "Designation");
             ViewBag.Departments = new SelectList(department_BL.GetDepartment(), "DepartmentId", "DepartmentName");
             var employee = AutoMapper.Mapper.Map<EmployeeModel, Employee>(employeeModel);
             Account(employeeModel);

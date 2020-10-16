@@ -11,6 +11,9 @@
 .ValidateMessageColor{
     color:red;
 }
+.Error{
+    color:red;
+}
 .Link{
     color:blue;
     border:10px;

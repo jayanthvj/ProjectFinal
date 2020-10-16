@@ -9,25 +9,30 @@ namespace Payroll_DAL
 {
     public class DepartmentRepository
     {
-        ContextClass contextClass = new ContextClass();
-        public void AddDepartment(Department department)
+        
+        public void AddDepartment(Department department)      //storing the data to database using stored procedure
         {
-            SqlParameter sql = new SqlParameter("@DepartmentName", department.DepartmentName);
-            var data = contextClass.Database.ExecuteSqlCommand("Department_Insert @DepartmentName", sql);
-            //contextClass.departments.Add(department);
-            contextClass.SaveChanges();
+            using (ContextClass contextClass = new ContextClass())
+            {
+                SqlParameter sql = new SqlParameter("@DepartmentName", department.DepartmentName);
+                var data = contextClass.Database.ExecuteSqlCommand("Department_Insert @DepartmentName", sql);
+                //contextClass.departments.Add(department);
+                contextClass.SaveChanges();
+            }
         }
-        public IEnumerable<Department> GetDepartment()
+        public IEnumerable<Department> GetDepartment()     //getting data from database to display 
         {
-
-            return contextClass.departments.ToList();
+            using (ContextClass contextClass = new ContextClass())
+            {
+                return contextClass.departments.ToList();
+            }
         }
-        public void DeleteDepartment(int DepartmentId)
+        public void DeleteDepartment(int DepartmentId)      //deleting the data from database using stored procedure
         {
             using (ContextClass departmentContextClass = new ContextClass())
             {
                 SqlParameter sql = new SqlParameter("@DepartmentId", DepartmentId);
-               int count = contextClass.Database.ExecuteSqlCommand("Department_Delete @DepartmentId", sql);
+               int count = departmentContextClass.Database.ExecuteSqlCommand("Department_Delete @DepartmentId", sql);
                 //Department department = departmentContextClass.departments.Find(DepartmentId);
                 //departmentContextClass.departments.Remove(department);
                 departmentContextClass.SaveChanges();

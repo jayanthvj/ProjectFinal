@@ -42,7 +42,7 @@ namespace Payroll_EmployeeManagementSystem.Models
 
         //Gender Field
         [Display(Name = "Gender")]
-        [RegularExpression("^[a-zA-Z]{1}[a-z]{5}$",ErrorMessage ="Enter the gender")]
+        [RegularExpression("^[a-zA-Z]{1}[a-z]{3}$",ErrorMessage ="Enter the gender")]
         [Required(ErrorMessage = "please enter the gender")]
         public string Gender { get; set; }
 

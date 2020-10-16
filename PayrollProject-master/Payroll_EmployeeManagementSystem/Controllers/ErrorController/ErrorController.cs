@@ -12,5 +12,9 @@ namespace Payroll_EmployeeManagementSystem.Controllers.ErrorController
         {
             return View();
         }
+        public ActionResult Error_404()
+        {
+            return View();
+        }
     }
 }

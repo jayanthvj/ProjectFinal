@@ -1,0 +1,56 @@
+﻿@model Payroll_EmployeeManagementSystem.Models.EmployeeModel
+
+@{
+    ViewBag.Title = "DisplayEmployeeData";
+    Layout = "~/Views/Shared/Master_LayoutPage.cshtml";
+}
+
+<h2>DisplayEmployeeData</h2>
+
+@Html.ActionLink("Create New Employee", "CreateEmployee")<br />
+
+<h2>Employee</h2>
+<table border="1">
+    <tr>
+        <td>Employee Name</td>
+        <td>Employee Age</td>
+        <td>Employee PhoneNumber</td>
+        <td>EmployeeEmail</td>
+        <td>DepartmentId</td>
+        <td>Designation Id</td>
+        <td>Manager Id</td>
+        <td>Choice</td>
+    </tr>
+    @foreach (var employee in (List<Payroll_Entity.Employee>)TempData["Employees"])
+    {
+        <tr>
+            <td>
+                @employee.EmployeeName
+            </td>
+            <td>
+                @employee.EmployeeAge
+            </td>
+            <td>
+                @employee.Gender
+            </td>
+            <td>
+                @employee.PhoneNumber
+            </td>
+            <td>
+                @employee.EmailId
+            </td>
+            <td>
+                @employee.DepartmentId
+            </td>
+            <td>
+                @employee.DesignationId
+            </td>
+           
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = employee.EmployeeId })
+            </td>
+            <td>@Html.ActionLink("Delete", "Delete", new { id = employee.EmployeeId })</td>
+        </tr>
+    }
+</table>
+

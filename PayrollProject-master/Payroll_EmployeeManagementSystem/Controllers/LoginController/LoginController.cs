@@ -66,5 +66,6 @@ namespace Payroll_EmployeeManagementSystem.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
+       
     }
 }

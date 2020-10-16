@@ -1,0 +1,93 @@
+﻿@model Payroll_EmployeeManagementSystem.Models.EmployeeModel
+
+@{
+    ViewBag.Title = "AddEmployee";
+    Layout = "~/Views/Shared/Master_LayoutPage.cshtml";
+}
+
+<h2>AddEmployee</h2>
+@using (Html.BeginForm("AddEmployee", "Main", FormMethod.Post))
+{
+       <table>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.EmployeeName)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.EmployeeName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Designation)
+            </td>
+            <td>
+                @Html.DropDownListFor(Model=> Model.DesignationId,(IEnumerable<SelectListItem>)ViewBag.Designations, "Select Designation")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.EmailId)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.EmailId)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.EmployeeAge)
+            </td>>
+            <td>
+                @Html.EditorFor(Model => Model.EmployeeAge)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Gender)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.Gender)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.PhoneNumber)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.PhoneNumber)
+            </td>
+        </tr>
+        @*<tr>
+            <td>
+                @Html.LabelFor(Model => Model.AccountId)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.AccountId)
+            </td>
+        </tr>*@
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Department)
+            </td>
+            <td>
+                @Html.DropDownListFor(Model => Model.DepartmentId,(IEnumerable<SelectListItem>)ViewBag.Departments,"select Departments")
+            </td>
+        </tr>
+        @*<tr>
+            <td>
+                @Html.LabelFor(Model => Model.Grade)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.Grade)
+            </td>
+        </tr>*@
+        <tr>
+            <td>@Html.ActionLink("Back", "AddEmployee")</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" id="AddEmployeeId" />
+            </td>
+        </tr>
+    </table>
+}

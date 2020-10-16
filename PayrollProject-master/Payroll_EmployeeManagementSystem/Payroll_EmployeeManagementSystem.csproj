@@ -194,6 +194,7 @@
     <Content Include="Views\Error\ErrorAction.cshtml" />
     <Content Include="Views\Main\SalaryData.cshtml" />
     <Content Include="Views\Main\DisplaySalaryData.cshtml" />
+    <Content Include="Views\Error\Error_404.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

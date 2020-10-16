@@ -7,25 +7,26 @@ using System.Threading.Tasks;
 namespace Payroll_DAL
 {
    public class SalaryRepository
-    {
-        ContextClass context = new ContextClass();
-
-        public void AddSalary(Salary salary)
+    { 
+        public void AddSalary(Salary salary)             //Storing data to database 
         {
-            context.Salary.Add(salary);
-            context.SaveChanges();
+            using (ContextClass context = new ContextClass())
+                {
+                context.Salary.Add(salary);
+                context.SaveChanges();
+            }
         }
-        public IEnumerable<Salary> GetSalaryData()
+        public IEnumerable<Salary> GetSalaryData()    //Getting data from database to display
         {
-
-            return context.Salary.ToList();
-        }
-        public void DeleteSalaryData(int grade)
-        {
-            using (ContextClass departmentContextClass = new ContextClass())
+            using (ContextClass context = new ContextClass())
             {
-                //SqlParameter sql = new SqlParameter("@DepartmentId", DepartmentId);
-                //int count = contextClass.Database.ExecuteSqlCommand("Department_Delete @DepartmentId", sql);
+                return context.Salary.ToList();
+            }
+        }
+        public void DeleteSalaryData(int grade)      //deleting data in database using stored procedure
+        {
+            using (ContextClass context = new ContextClass())
+            {
                 Salary salary = context.Salary.Find(grade);
                 context.Salary.Remove(salary);
                 context.SaveChanges();

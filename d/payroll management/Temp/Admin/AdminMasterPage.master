@@ -1,0 +1,159 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="Admin_AdminMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+
+    <title>Payroll Management</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../Temp/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Temp/css/normalize.css">
+    <link rel="stylesheet" href="../Temp/css/component.css">
+    <link rel="stylesheet" href="../Temp/css/custom-styles.css">
+    <link rel="stylesheet" href="../Temp/css/font-awesome.css">
+	
+     
+	 <link rel="stylesheet" href="../Temp/css/demo.css">
+    <link rel="stylesheet" href="../Temp/css/font-awesome-ie7.css">
+
+      <script src="js/jquery.mobilemenu.js"></script>
+      <script src="../Temp/js/html5shiv.js"></script>
+      <script src="../Temp/js/respond.min.js"></script>
+      <script>
+          $(document).ready(function () {
+              $('.menu').mobileMenu();
+          });
+  </script>
+ 
+  </head>
+
+  <body>
+    <div class="header-wrapper">
+      <div class="site-name">
+        <h1>Payroll Management</h1>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Maintain Employee Salary Records</h2>
+      </div>
+    </div>
+    <div class="menu">
+      <div class="navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <i class="fw-icon-th-list"></i>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="Home.aspx">Home</a></li>
+              <li><a href="Add Employee.aspx">Add Employee</a></li>
+              <li><a href="Payslip Genrate.aspx">Payslips Genrate</a></li>
+              <li><a href="view Payslips.aspx">View Payslips</a></li>
+              <li><a href="View Employee.aspx">View Employee</a></li>
+              <li><a href="../main/Login.aspx">Logout</a></li>
+            </ul>
+          </div><!--/.navbar-collapse -->
+        </div>
+      </div>
+      <div class="mini-menu">
+            <label>
+          <select class="selectnav">
+            <option value="#" selected="">Home</option>
+            <option value="#">About</option>
+            <option value="#">→ Another action</option>
+            <option value="#">→ Something else here</option>
+            <option value="#">→ Another action</option>
+            <option value="#">→ Something else here</option>
+            <option value="#">Services</option>
+            <option value="#">Work</option>
+            <option value="#">Contact</option>
+          </select>
+          </label>
+          </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="banner">
+      <div id="carousel-example-generic" class="carousel slide">
+  
+  <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="../Temp/img/banner-image.jpg" alt="">
+            <div class="carousel-caption">
+              <h1>Payroll Management</h1>
+              <h2>Your piece of mind is our bussiness</h2>
+              <a href="#" class="btn">Payroll</a>
+            </div>
+          </div>
+          <div class="item">
+            <img src="../Temp/img/banner-image.jpg" alt="">
+            <div class="carousel-caption">
+              <h1>Payroll Management</h1>
+              <h2>Together everyone achieves more</h2>
+              <a href="#" class="btn">Payment</a>
+            </div>
+          </div>
+          <div class="item">
+            <img src="../Temp/img/banner-image.jpg" alt="">
+            <div class="carousel-caption">
+              <h1>Payroll Management</h1>
+              <h2>An ounce of performance is worth pounds of promises</h2>
+              <a href="#" class="btn">Payment</a>
+            </div>
+          </div>
+        </div>
+
+  <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <i class="fw-icon-chevron-left"></i>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <i class="fw-icon-chevron-right"></i>
+      </a>
+    </div>
+    </div>
+    <br />
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+   
+      <div class="copy-rights">
+      <div class="container">
+        <div class="row">
+          
+            <div class="col-md-6">
+              Copyright(c) website name. Designed by: <a href="http://www.alltemplateneeds.com"> www.alltemplateneeds.com</a>
+            </div>
+            <div class="col-md-6">
+              Images from: <a href="http://www.wallpaperswide.com">http://wallpaperswide.com</a> / <a href="http://www.wallcoo.net"> www.wallcoo.net</a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      </div>
+
+      
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../Temp/js/jquery-1.9.1.js"></script>
+    <script src="../Temp/js/bootstrap.js"></script>
+    <script src="../Temp/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    
+    
+  </body>
+</html>
+
